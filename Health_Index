@@ -1,0 +1,13 @@
+height = input("What is your height?\n")
+weight = input("What is your weight?\n")
+parameter = float(weight)/float(height)/float(height)
+if parameter >= 18.5 and parameter <= 25:
+  print("Normal")
+elif parameter >=25 and parameter <=30:
+  print("overweighted")
+elif parameter >=30 and parameter <=40:
+  print("seriously overweighted")
+elif parameter >40:
+  print("super overweighted")
+else:
+  print("No range found")
