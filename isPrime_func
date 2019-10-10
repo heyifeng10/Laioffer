@@ -1,3 +1,5 @@
+import math
+
 def isPrime(x):
     if x == 1:
         return False
@@ -7,9 +9,50 @@ def isPrime(x):
 
     return True
 
+def isComposite(x):
+  if x == 1:
+    return False
+  return not isPrime(x)
 
+def factorSum(x):
+  sum = 0
+  for i in range (1,x):
+    if x%i == 0:
+      sum += i
+  return sum
+def isPerfect(x):
+  return x == factorSum(x)
+
+def isAbundant(x):
+  return x < factorSum(x)
+
+def isPosInt(x):
+  return x == int(x) and x > 0  
+
+def checkSolution(a,b,c):
+  if b**2 - 4*a*c < 0:
+    return False
+  delta = math.sqrt(b**2-4*a*c) 
+  solution_a = (-b+delta)/(2*a) 
+  solution_b = (-b - delta)/(2*a)
+  return isPosInt(solution_a) or isPosInt(solution_b)
+  
 #isPrime(17)
+"""
 if isPrime(17):
     print("This is a prime number")
 else:
     print("It is not a prime number")
+
+if isComposite(17):
+    print("This is a composite number")
+else:
+    print("It is not a composite number")
+
+print(factorSum(9))
+"""
+
+if isPerfect(10):
+    print("This is a perfect number")
+else:
+    print("It is not a perfect number")
